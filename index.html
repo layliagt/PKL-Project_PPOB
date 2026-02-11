@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPAY - Peluang Bisnis Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- Animasi Loading -->
+    <div id="loader"
+        class="fixed inset-0 z-[9999] bg-[#2E7D32] flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="relative">
+            <div
+                class="w-20 h-20 bg-white rounded-3xl rotate-12 flex items-center justify-center shadow-2xl animate-bounce">
+                <i class="fas fa-bolt text-[#2E7D32] text-4xl"></i>
+            </div>
+            <div class="absolute inset-0 w-20 h-20 border-4 border-white/20 rounded-3xl animate-ping"></div>
+        </div>
+        <h2 class="mt-8 text-white font-black text-3xl tracking-tighter italic animate-pulse">
+            D<span class="text-[#FFB74D]">PAY</span>
+        </h2>
+        <div class="mt-2 w-32 h-1 bg-white/20 rounded-full overflow-hidden">
+            <div class="h-full bg-[#FFB74D] animate-[loading_1.5s_ease-in-out_infinite]"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="nav-glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="relative w-12 h-12">
+                    <div class="absolute inset-0 bg-[#FFB74D] rounded-2xl rotate-12 opacity-80 shadow-md"></div>
+                    <div
+                        class="absolute inset-0 bg-[#2E7D32] rounded-2xl -rotate-6 shadow-lg flex items-center justify-center border border-white/20">
+                        <i class="fas fa-bolt text-white text-lg animate-pulse"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col -space-y-2">
+                    <span class="text-3xl font-black tracking-tighter italic">
+                        <span class="text-[#2E7D32]">D</span><span class="text-[#FFB74D]">PAY</span>
+                    </span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#2E7D32]/60 pl-1">DarulAsyraf
+                        Payment</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-2 font-bold text-sm items-center">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#section-produk" class="nav-link">Produk</a>
+                <a href="#section-daftar" class="nav-link">Daftar</a>
+                <a href="#section-testimoni" class="nav-link">Testimoni</a>
+                <a href="#section-kontakKami" class="nav-link">Kontak</a>
+                <a href="#section-tentangKami" class="nav-link">Tentang Kami</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="window.open('https://dpay.darulasyraf.or.id', '_blank')"
+                    class="hidden md:block bg-[#2E7D32] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#4CAF50] transition shadow-md">
+                    Buka Akun
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden text-[#2E7D32] text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-[#2E7D32] z-[101] flex flex-col items-center justify-center space-y-8 translate-x-full transition-transform duration-500 md:hidden">
+            <button id="close-menu" class="absolute top-6 right-8 text-white text-3xl">&times;</button>
+            <a href="#" class="text-white text-2xl font-bold">Home</a>
+            <a href="#section-produk" class="text-white text-2xl font-bold">Produk</a>
+            <a href="#section-daftar" class="text-white text-2xl font-bold">Daftar</a>
+            <a href="#section-testimoni" class="text-white text-2xl font-bold">Testimoni</a>
+            <a href="#section-kontakKami" class="text-white text-2xl font-bold">Kontak</a>
+            <a href="#section-tentangKami" class="nav-link">Tentang Kami</a>
+        </div>
+    </nav>
+
+    <!-- Section -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="hero-gradient p-10 md:p-20 text-white shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="particle p1"></div>
+                <div class="particle p2"></div>
+                <div class="particle p3"></div>
+                <div class="particle p4"></div>
+                <div class="particle p5"></div>
+            </div>
+            <div class="text-center mb-16 relative z-10 animate-title">
+                <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight leading-tight animate-title">
+                    <span class="text-yellow-200">DPAY</span> APLIKASI DIGITAL DENGAN <br> SEGUDANG <span
+                        class="text-[#FFB74D]">PELUANG BISNIS</span>
+                </h1>
+                <p class="mt-6 text-green-50 opacity-90 max-w-2xl mx-auto text-sm md:text-base animate-desc">
+                    DPAY – Aplikasi isi pulsa, paket data internet, pembayaran tagihan PLN, Telkom, PDAM yang mencakup
+                    seluruh wilayah di Indonesia, BPJS dan pembayaran PPOB lainnya, topup e-Money seperti DANA,
+                    ShopeePay, LinkAja, OVO, Tiket Pesawat, Kereta api dan Belanja Grosir serta berbagai produk digital
+                    lainnya.
+                </p>
+            </div>
+            <div class="flex flex-col-mobile md:flex-row items-center justify-between gap-12 relative z-10">
+                <div class="w-full md:w-1/2 order-text animate-left space-y-6 order-2 md:order-1">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 border-b border-white/20 pb-4">
+                            <div class="bg-white rounded-full p-1 flex-shrink-0">
+                                <i
+                                    class="fas fa-check text-[#4CAF50] text-xs w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+                            <p class="text-lg font-bold">1.000.000++ Download Aplikasi DPAY</p>
+                        </div>
+                        <div class="flex items-center space-x-4 border-b border-white/20 pb-4">
+                            <div class="bg-white rounded-full p-1 flex-shrink-0">
+                                <i
+                                    class="fas fa-check text-[#4CAF50] text-xs w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+                            <p class="text-lg font-bold">750.000++ Transaksi setiap hari dengan hanya hitungan detik
+                                sudah terkirim</p>
+                        </div>
+                        <div class="flex items-center space-x-4 border-b border-white/20 pb-4">
+                            <div class="bg-white rounded-full p-1 flex-shrink-0">
+                                <i
+                                    class="fas fa-check text-[#4CAF50] text-xs w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+                            <p class="text-lg font-bold">900.000++ Mitra Aktif di Seluruh Indonesia</p>
+                        </div>
+                        <div class="flex items-center space-x-4 border-b border-white/20 pb-4">
+                            <div class="bg-white rounded-full p-1 flex-shrink-0">
+                                <i
+                                    class="fas fa-check text-[#4CAF50] text-xs w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+                            <p class="text-lg font-bold">25++ kantor cabang & Top Up Point tersebar di kota-kota besar
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-4 border-b border-white/20 pb-4">
+                            <div class="bg-white rounded-full p-1 flex-shrink-0">
+                                <i
+                                    class="fas fa-check text-[#4CAF50] text-xs w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+                            <p class="text-lg font-bold">24 Jam Transaksi dengan pelayanan customer service yang ramah
+                                siap membantu</p>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <button onclick="window.open('https://dpay.darulasyraf.or.id', '_blank')"
+                            class="btn-custom text-white font-black px-12 py-5 rounded-full text-xl uppercase tracking-widest shadow-xl transition-transform hover:scale-105">
+                            DAFTAR SEKARANG
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="w-full md:w-1/2 order-image image-container animate-right relative flex justify-center items-center">
+                    <div class="relative w-full max-w-[550px] flex justify-center items-center">
+                        <div class="absolute w-[120%] h-[120%] border-[2px] border-white/20 rounded-full"></div>
+                        <div class="absolute w-[100%] h-[100%] border-[1px] border-white/10 rounded-full"></div>
+                        <div class="absolute w-[80%] h-[80%] bg-white/5 blur-[60px] rounded-full"></div>
+                        <div
+                            class="w-[85%] aspect-video bg-white rounded-[3rem] p-3 shadow-2xl relative z-10 border border-white/50 animate-float">
+                            <div class="w-full h-full rounded-[2.5rem] overflow-hidden">
+                                <img src="img/foto1.jpg" alt="DPAY Team" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -bottom-8 bg-[#2E7D32] text-white px-8 py-3 rounded-full shadow-2xl z-20 flex items-center space-x-3 border border-white/20">
+                            <i class="fas fa-check-circle text-yellow-300"></i>
+                            <span class="font-bold tracking-wide">Deposit Berhasil!</span>
+                        </div>
+                        <div class="absolute -left-10 top-1/2 -translate-y-1/2 bg-white p-3 rounded-2xl shadow-xl z-20">
+                            <i class="fas fa-user-check text-[#4CAF50] text-xl"></i>
+                        </div>
+                        <div class="absolute -left-4 bottom-10 bg-white p-3 rounded-2xl shadow-xl z-20">
+                            <i class="fas fa-mobile-alt text-[#4CAF50] text-xl"></i>
+                        </div>
+                        <div class="absolute -right-4 top-10 bg-white p-3 rounded-2xl shadow-xl z-20">
+                            <i class="fas fa-wallet text-[#FFB74D] text-xl"></i>
+                        </div>
+                        <div
+                            class="absolute -right-10 top-1/2 -translate-y-1/2 bg-white p-3 rounded-2xl shadow-xl z-20">
+                            <i class="fas fa-f-card text-[#FFB74D] text-xl"></i>
+                        </div>
+                        <div class="absolute -right-4 bottom-10 bg-white p-3 rounded-xl shadow-xl z-20">
+                            <i class="fas fa-bolt text-yellow-500 text-xl"></i>
+                        </div>
+                        <div
+                            class="absolute -bottom-8 bg-[#2E7D32] text-white px-8 py-3 rounded-full shadow-2xl z-20 flex items-center space-x-3 border border-white/20">
+                            <i class="fas fa-check-circle text-yellow-300"></i>
+                            <span class="font-bold tracking-wide">Deposit Berhasil!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!--Gaya-->
+    <section class="bg-gray-50 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800">
+                    Apa saja kelebihannya dan keuntungan <span class="text-[#2E7D32]">DPAY?</span>
+                </h2>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="w-full md:w-1/2 flex justify-center relative">
+                    <div class="absolute w-72 h-72 bg-[#2E7D32]/10 rounded-full blur-3xl -z-10"></div>
+                    <div class="relative max-w-[320px]">
+                        <img src="img/foto2.png" alt="DPAY App" class="w-full drop-shadow-2xl animate-float">
+                        <div
+                            class="absolute -bottom-5 -left-10 bg-white p-4 rounded-2xl shadow-xl flex items-center space-x-3 border border-gray-100 animate-bounce-slow">
+                            <div class="bg-yellow-400 p-2 rounded-lg">
+                                <i class="fas fa-crown text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-gray-400 font-bold uppercase">Terpercaya</p>
+                                <p class="text-sm font-black text-gray-800">NO. 1 DI INDONESIA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 space-y-6">
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center space-x-4 group p-2 hover:bg-white hover:shadow-md rounded-xl transition-all">
+                            <div
+                                class="bg-green-100 text-[#2E7D32] w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-[#2E7D32] group-hover:text-white transition-colors">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-700">Mudah dan Efisien</span>
+                        </div>
+                        <div
+                            class="flex items-center space-x-4 group p-2 hover:bg-white hover:shadow-md rounded-xl transition-all">
+                            <div
+                                class="bg-green-100 text-[#2E7D32] w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-[#2E7D32] group-hover:text-white transition-colors">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-700">Transaksi Aman & Terenkripsi</span>
+                        </div>
+                        <div
+                            class="flex items-center space-x-4 group p-2 hover:bg-white hover:shadow-md rounded-xl transition-all">
+                            <div
+                                class="bg-green-100 text-[#2E7D32] w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-[#2E7D32] group-hover:text-white transition-colors">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-700">Produk Lengkap & Harga Termurah</span>
+                        </div>
+                        <div
+                            class="flex items-center space-x-4 group p-2 hover:bg-white hover:shadow-md rounded-xl transition-all">
+                            <div
+                                class="bg-green-100 text-[#2E7D32] w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-[#2E7D32] group-hover:text-white transition-colors">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-700">Agen Pulsa & PPOB Terpercaya</span>
+                        </div>
+                        <div
+                            class="flex items-center space-x-4 group p-2 hover:bg-white hover:shadow-md rounded-xl transition-all">
+                            <div
+                                class="bg-green-100 text-[#2E7D32] w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-[#2E7D32] group-hover:text-white transition-colors">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-700">Deposit Bebas & Praktis</span>
+                        </div>
+                        <div
+                            class="flex items-center space-x-4 group p-2 hover:bg-white hover:shadow-md rounded-xl transition-all">
+                            <div
+                                class="bg-green-100 text-[#2E7D32] w-10 h-10 rounded-full flex items-center justify-center shrink-0 group-hover:bg-[#2E7D32] group-hover:text-white transition-colors">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="text-lg font-semibold text-gray-700">Layanan CS 24 Jam Nonstop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center max-w-5xl mx-auto border-t border-gray-200 pt-10">
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Gunakan DPAY untuk semua kebutuhan digital Anda, mulai dari pulsa, paket data, hingga token listrik
+                    dengan harga terbaik. Memudahkan usaha Anda jadi lebih menguntungkan dan terus berkembang setiap
+                    hari.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produk -->
+    <section id="section-produk" class="bg-white py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 leading-tight">
+                    DPAY Membantu Usaha Kecil Untuk Tumbuh Berkembang
+                </h2>
+                <p class="mt-4 text-gray-600 max-w-3xl mx-auto font-medium">
+                    Kami tidak hanya menyediakan akses ke berbagai produk digital unggulan seperti pulsa, paket data,
+                    dan pembayaran tagihan terlengkap, tetapi kami juga memastikan bahwa setiap harga yang Sobat
+                    dapatkan adalah harga tangan pertama yang paling kompetitif di pasar. Dengan efisiensi modal dan
+                    margin keuntungan yang lebih luas, kami ingin memastikan bisnis Sobat tetap tangguh, relevan, dan
+                    terus tumbuh di tengah persaingan digital yang semakin ketat. Bersama DPAY, langkah kecil Anda hari
+                    ini adalah investasi besar untuk masa depan."
+                </p>
+            </div>
+
+            <!-- Section Layanan -->
+            <section id="section-produk" class="py-20 bg-white font-sans">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-black text-gray-800 uppercase tracking-tight mb-4">
+                            Layanan Digital Terlengkap
+                        </h2>
+                        <div class="h-1.5 w-24 bg-orange-500 mx-auto rounded-full"></div>
+                        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                            Satu saldo untuk ribuan produk digital. Transaksi cepat, aman, dan tersedia 24 jam nonstop
+                            untuk mendukung bisnis Anda.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div
+                            class="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-green-50 hover:border-green-200 transition-all duration-300">
+                            <div class="text-4xl mb-4">📱</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-700">Pulsa & Paket
+                                Data</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Tersedia pulsa reguler, transfer, dan paket internet untuk semua operator (Telkomsel,
+                                Indosat, XL, Axis, Smartfren, Three) dengan harga agen termurah.
+                            </p>
+                        </div>
+                        <div
+                            class="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-green-50 hover:border-green-200 transition-all duration-300">
+                            <div class="text-4xl mb-4">💡</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-700">Token & Tagihan
+                                Listrik</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Pengisian Token PLN Prabayar mulai dari nominal kecil hingga besar, serta pembayaran
+                                tagihan listrik Pascabayar dengan proses instan.
+                            </p>
+                        </div>
+                        <div
+                            class="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-green-50 hover:border-green-200 transition-all duration-300">
+                            <div class="text-4xl mb-4">💳</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-700">Top Up E-Money
+                            </h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Isi saldo DANA, OVO, GoPay, ShopeePay, LinkAja, hingga saldo Maxim driver dengan admin
+                                yang sangat kompetitif.
+                            </p>
+                        </div>
+                        <div
+                            class="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-green-50 hover:border-green-200 transition-all duration-300">
+                            <div class="text-4xl mb-4">🏦</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-700">Pembayaran PPOB
+                            </h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Bayar tagihan PDAM, BPJS Kesehatan, Telkom/Indihome, TV Berlangganan, dan cicilan
+                                multifinance dalam satu klik.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-20">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 max-w-4xl mx-auto leading-relaxed">
+                        DPAY hadir untuk membantu masyarakat ekonomi kecil agar bisa lebih maju, berkembang dan
+                        sejahtera.
+                    </h3>
+                </div>
+        </div>
+    </section>
+
+    <!-- Section Daftar -->
+    <section id="section-daftar" class="bg-[#2E7D32] py-20 px-6 text-center text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <h2 class="text-2xl md:text-3xl font-black uppercase tracking-wider mb-10">
+                DOWNLOAD APLIKASI DPAY DI PLAYSTORE
+            </h2>
+            <div class="relative inline-block mb-12">
+                <div
+                    class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] h-12 bg-white/20 rounded-[100%] blur-xl">
+                </div>
+                <div class="relative z-10 flex justify-center items-center">
+                    <img src="img/foto3.jpeg" alt="DPAY App Screen"
+                        class="w-48 md:w-56 rounded-[2.5rem] shadow-2xl border-4 border-white/20 animate-float">
+
+                    <div
+                        class="absolute top-1/2 -right-12 bg-red-600 text-[10px] font-black px-4 py-1.5 rounded-full shadow-lg -rotate-12 animate-pulse">
+                        FOLLOW ME
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-4xl mx-auto mb-10">
+                <p class="text-sm md:text-lg leading-relaxed font-medium opacity-90">
+                    Dengan penawaran produk yang lengkap dengan harga yang murah, membuat anda dapat menghemat banyak
+                    setiap anda melakukan transaksi, bahkan anda dapat berjualan berbagai produk yang kami miliki hingga
+                    membangun jaringan agen pulsa untuk mendapatkan penghasilan yang memadai.
+                </p>
+            </div>
+            <div class="flex flex-col items-center space-y-6">
+                <a href="https://dpay.darulasyraf.or.id" class="transition-transform hover:scale-105 active:scale-95">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                        alt="Google Play" class="h-16 shadow-lg rounded-lg">
+                </a>
+            </div>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <i class="fas fa-bolt text-[40rem] absolute -left-20 -top-20 rotate-12"></i>
+        </div>
+    </section>
+
+    <!--Section Kelebihan-->
+    <section class="bg-gray-50 py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
+                    Keunggulan Transaksi Menggunakan DPAY
+                </h2>
+                <p class="text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
+                    Sekaranglah waktu yang tepat bagi anda untuk menggunakan aplikasi DPAY sebagai transaksi penjualan
+                    dan pembayaran online karena mudah digunakan dan transaksi super cepat.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-5 hover:shadow-md transition-shadow">
+                    <div class="bg-green-500 text-white w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-600 mb-2">Pendaftaran 100% Gratis</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Bagi mitra pemula yang baru bergabung dan pertama bisnis ini bisa mencoba terlebih dulu
+                            aplikasi DPAY dan mempelajarinya sebelum melakukan deposit. Karena dengan modal Rp.50.000,-
+                            maka mitra sudah bisa buka usaha bisnis digital.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-5 hover:shadow-md transition-shadow">
+                    <div class="bg-green-500 text-white w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-600 mb-2">Transaksi Online 24 Jam</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Transaksi menggunakan aplikasi DPAY, SMS, WhatsApp dan Telegram dapat dilakukan selama 24
+                            jam nonstop kecuali pada saat terjadinya gangguan langsung dari provider.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-5 hover:shadow-md transition-shadow">
+                    <div class="bg-green-500 text-white w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-600 mb-2">Support Customer Service</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Tim Customer Service kami sentiasa ada, untuk menjawab segala pertanyaan & membantu para
+                            Agen DPAY melalui Telepon, dan aplikasi instant messaging Telegram agar dapat memberikan
+                            Kemudahan & kenyamanan dalam bertransaksi.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-5 hover:shadow-md transition-shadow">
+                    <div class="bg-green-500 text-white w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-600 mb-2">Bisa di Downlinekan tanpa Batas</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Daftarkan teman-teman atau saudara kalian untuk menjadi downline dengan cara membagikan kode
+                            refferal kalian, semakin banyak yang kalian daftarkan maka otomatis semakin besar
+                            penghasilan kalian setiap bulan.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-5 hover:shadow-md transition-shadow">
+                    <div class="bg-green-500 text-white w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-600 mb-2">Ada Web Report Pelaporan</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Fasilitas lainnya yang disediakan adalah adanya web report untuk melakukan pelaporan atau
+                            perekapan transaksi harian akan dicatat dengan detail dan perkembangan jaringan menjadi
+                            lebih mudah dipantau.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-5 hover:shadow-md transition-shadow">
+                    <div class="bg-green-500 text-white w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-green-600 mb-2">Ada Fitur Cetak Struk</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Salah satu cara untuk menarik kepercayaan pelanggan adalah dengan menyertakan struk di
+                            setiap pembelian pulsa, Struk transaksi memudahkan Anda dan konsumen untuk memiliki bukti
+                            transaksi yang sah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Section Alasan-->
+    <section class="bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-3/5 order-2 md:order-1">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-10 leading-tight">
+                    Mengapa Kamu Harus Memakai <span class="text-[#2E7D32]">Aplikasi DPAY</span>
+                </h2>
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4 border-b border-dashed border-gray-300 pb-6">
+                        <div
+                            class="bg-[#2E7D32] text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-check text-[10px]"></i>
+                        </div>
+                        <p class="text-lg font-medium text-gray-700">Aplikasinya ringan dan tampilannya bagus</p>
+                    </div>
+                    <div class="flex items-start space-x-4 border-b border-dashed border-gray-300 pb-6">
+                        <div
+                            class="bg-[#2E7D32] text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-check text-[10px]"></i>
+                        </div>
+                        <p class="text-lg font-medium text-gray-700">Transaksi cepat hitungan detik sudah masuk dan stok
+                            produk yang selalu ready dan lengkap</p>
+                    </div>
+                    <div class="flex items-start space-x-4 border-b border-dashed border-gray-300 pb-6">
+                        <div
+                            class="bg-[#2E7D32] text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-check text-[10px]"></i>
+                        </div>
+                        <p class="text-lg font-medium text-gray-700">Customer service siap membantu 24 jam jika ada
+                            kendala transaksi</p>
+                    </div>
+                    <div class="flex items-start space-x-4 border-b border-dashed border-gray-300 pb-6">
+                        <div
+                            class="bg-[#2E7D32] text-white w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="fas fa-check text-[10px]"></i>
+                        </div>
+                        <p class="text-lg font-medium text-gray-700">Deposit ringan minimal Rp. 50.000,- bisa topup via
+                            transfer bank, Virtual account, OVO, Alfamart, QRIS dan lainnya.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-2/5 order-1 md:order-2 flex justify-center relative">
+                <div class="absolute bottom-0 w-64 h-10 bg-gray-200 rounded-[100%] blur-md"></div>
+                <div class="relative z-10">
+                    <img src="img/foto4.jpeg" alt="DPAY Digital Product"
+                        class="w-64 md:w-72 rounded-[2.5rem] shadow-2xl border-4 border-white animate-float">
+                    <div class="absolute -right-8 top-1/4 bg-white p-3 rounded-xl shadow-lg animate-bounce-slow">
+                        <i class="fas fa-plane text-blue-500 text-2xl"></i>
+                    </div>
+                    <div class="absolute -left-8 bottom-1/4 bg-white p-3 rounded-xl shadow-lg animate-bounce-slow"
+                        style="animation-delay: 1s;">
+                        <i class="fas fa-ticket-alt text-orange-500 text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Testimoni -->
+    <section id="section-testimoni" class="bg-[#FFB74D] py-20 px-6 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-black mb-2 uppercase italic">Sobat DPAY</h2>
+            <p class="text-lg opacity-90 mb-12">Simak Juga Apa Pendapat Mereka:</p>
+            <div class="relative px-4 md:px-12">
+                <div id="testimonial-container" class="relative min-h-[400px] md:min-h-[350px]">
+                    <div class="testimonial-item transition-all duration-700 opacity-100 scale-100">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-32 h-32 rounded-full border-4 border-white/50 overflow-hidden mb-8 shadow-2xl">
+                                <img src="img/testi1.jpeg" alt="sintia" class="w-full h-full object-cover">
+                            </div>
+                            <blockquote class="text-lg md:text-xl font-medium leading-relaxed max-w-3xl mb-6">
+                                "Bisa bayar apa saja jadi tidak perlu repot keluar apalagi saat tengah malam token
+                                listrik habis, tinggal isi pakai aplikasi DPAY semuanya jadi mudah, terimakasih DPAY."
+                            </blockquote>
+                            <p class="font-black text-xl uppercase tracking-widest">ANA SINTIA</p>
+                            <p class="text-sm font-bold opacity-80">Desaigner</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item transition-all duration-700 opacity-0 scale-95 hidden">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-32 h-32 rounded-full border-4 border-white/50 overflow-hidden mb-8 shadow-2xl">
+                                <img src="img/testi2.jpeg" alt="dini" class="w-full h-full object-cover">
+                            </div>
+                            <blockquote class="text-lg md:text-xl font-medium leading-relaxed max-w-3xl mb-6">
+                                "Awalnya ragu, tapi setelah coba deposit 50rb ternyata transaksinya beneran kilat.
+                                Sekarang warung saya makin rame karena bisa melayani pembayaran PPOB lengkap!"
+                            </blockquote>
+                            <p class="font-black text-xl uppercase tracking-widest">DINI KURNIAWATI</p>
+                            <p class="text-sm font-bold opacity-80">Konten Kreator</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item transition-all duration-700 opacity-0 scale-95 hidden">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-32 h-32 rounded-full border-4 border-white/50 overflow-hidden mb-8 shadow-2xl">
+                                <img src="img/testi3.jpeg" alt="amel" class="w-full h-full object-cover">
+                            </div>
+                            <blockquote class="text-lg md:text-xl font-medium leading-relaxed max-w-3xl mb-6">
+                                "Fitur cetak struknya sangat membantu profesionalitas bisnis kecil saya. Konsumen jadi
+                                makin percaya karena ada bukti bayar yang sah dari DPAY."
+                            </blockquote>
+                            <p class="font-black text-xl uppercase tracking-widest">AMELIYA AGUSTIN</p>
+                            <p class="text-sm font-bold opacity-80">Konten Kreator</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-item transition-all duration-700 opacity-0 scale-95 hidden">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-32 h-32 rounded-full border-4 border-white/50 overflow-hidden mb-8 shadow-2xl">
+                                <img src="img/testi4.jpg" alt="layli" class="w-full h-full object-cover">
+                            </div>
+                            <blockquote class="text-lg md:text-xl font-medium leading-relaxed max-w-3xl mb-6">
+                                "CS-nya beneran fast respon lewat WhatsApp. Kalau ada kendala tengah malam tetep
+                                dilayani dengan baik. Support-nya juara untuk mitra kecil seperti saya."
+                            </blockquote>
+                            <p class="font-black text-xl uppercase tracking-widest">LAYLI AGUSTINA</p>
+                            <p class="text-sm font-bold opacity-80">Programmer</p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="prevSlide()"
+                    class="absolute left-[-20px] md:left-0 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors text-5xl z-20">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()"
+                    class="absolute right-[-20px] md:right-0 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors text-5xl z-20">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div id="dot-container" class="flex justify-center space-x-3 mt-10">
+                <div class="dot w-3 h-3 rounded-full bg-white transition-all cursor-pointer" onclick="goToSlide(0)">
+                </div>
+                <div class="dot w-3 h-3 rounded-full bg-white/30 transition-all cursor-pointer" onclick="goToSlide(1)">
+                </div>
+                <div class="dot w-3 h-3 rounded-full bg-white/30 transition-all cursor-pointer" onclick="goToSlide(2)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Kontak Kami-->
+    <section id="section-kontakKami" class="bg-[#2E7D32] py-20 px-6 text-center">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                Sekarang Saatnya Kamu Harus Membuktikan <span class="text-[#FFB74D]">Aplikasi DPAY</span> Layak di
+                Jadikan Teman Bisnis Mu Usaha Semakin Menguntungkan dan Berkembang.
+            </h2>
+            <p class="text-white/90 text-lg md:text-xl font-medium">
+                Daftar sekarang juga jangan lewatkan kesempatan ini karena sukses Mu ada ditangan Kamu sendiri dan jika
+                ada petanyaan atau Daftar bisa hubungi kami sekarang!
+            </p>
+            <div class="pt-6">
+                <a href="https://wa.me/6285126617411?text=Halo%20DPAY,%20saya%20ingin%20daftar%20menjadi%20mitra"
+                    target="_blank"
+                    class="inline-block bg-white text-[#2E7D32] font-black text-xl md:text-2xl px-10 py-5 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:bg-[#FFB74D] hover:text-white transition-all transform hover:-translate-y-1 active:scale-95 uppercase tracking-wide">
+                    Daftar Via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Keunggulan-->
+    <section class="bg-gray-100 py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-[2rem] shadow-2xl p-8 md:p-16 border border-gray-100 relative overflow-hidden">
+                <h2 class="text-2xl md:text-3xl font-black text-gray-800 text-center mb-12 leading-tight">
+                    Aplikasi <span class="text-[#2E7D32]">DPAY</span> dijamin Aman dan Terpercaya
+                </h2>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 border-b border-dashed border-gray-300 pb-5">
+                        <div
+                            class="bg-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                        <p class="text-gray-700 font-medium md:text-lg">Kantor Cabang Tersebar di Kota-Kota Besar di
+                            Seluruh Indonesia</p>
+                    </div>
+                    <div class="flex items-center space-x-4 border-b border-dashed border-gray-300 pb-5">
+                        <div
+                            class="bg-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                        <p class="text-gray-700 font-medium md:text-lg">Rekening Bank Atas Nama Perusahaan</p>
+                    </div>
+                    <div class="flex items-center space-x-4 border-b border-dashed border-gray-300 pb-5">
+                        <div
+                            class="bg-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                        <p class="text-gray-700 font-medium md:text-lg">Server di Taruh di Data Center Jakarta Jadi
+                            Listrik dan Inet Lancar</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="bg-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fas fa-check text-xs"></i>
+                        </div>
+                        <p class="text-gray-700 font-medium md:text-lg">Transaksi 24 Jam dan Custumer Service Siap
+                            Melayani dengan Senang Hati</p>
+                    </div>
+                </div>
+                <div class="absolute -right-10 -bottom-10 opacity-[0.03] pointer-events-none">
+                    <i class="fas fa-shield-alt text-[15rem]"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tentang Kami -->
+    <section id="section-tentangKami" class="bg-white py-12 px-6 text-center border-t border-gray-100 font-sans">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-2 uppercase">
+                DPAY - Darul Asyraf
+            </h2>
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-10">
+                Dsn. Sidonganti, RT/RW. 007/009, Kraton, Kec. Kencong <br>
+                Kabupaten Jember, Jawa Timur 68167
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="p-4 bg-gray-50 rounded-xl">
+                    <h3 class="font-bold text-lg text-gray-800 mb-3 underline decoration-orange-400">Costomer Sevice
+                        Kami</h3>
+                    <p class="text-sm text-gray-700 font-semibold text-orange-600">WhatsApp: +62 851-2661-7411</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-xl">
+                    <h3 class="font-bold text-lg text-gray-800 mb-3 underline decoration-blue-400">Media Sosial</h3>
+                    <p class="text-sm text-gray-700 font-medium">@darulasyraf.or.id</p>
+                    <p class="text-sm text-gray-700 font-medium">www.darulasyraf.or.id</p>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-4xl font-black text-green-600 italic tracking-tight">
+                    Pendaftaran Gratis
+                </h2>
+                <div class="flex justify-center">
+                    <a href="https://wa.me/6285126617411"
+                        class="btn-gabung flex items-center text-white font-extrabold py-4 px-12 rounded-full shadow-lg uppercase tracking-wider no-underline">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.406.832 3.391 1.547 5.291 1.548 5.457 0 9.894-4.436 9.897-9.894.002-2.641-1.029-5.124-2.906-7.003-1.875-1.878-4.361-2.911-7.001-2.912-5.457 0-9.891 4.437-9.894 9.894-.001 1.905.503 3.762 1.458 5.378l-1.082 3.946 4.048-1.061-.011.002zm11.367-8.929c-.3-.15-1.77-.874-2.044-.974-.275-.101-.475-.15-.675.15-.2.3-.775 1.012-.95 1.212-.175.2-.35.225-.65.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.175-.3-.019-.465.13-.614.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.589-.491-.51-.675-.519-.175-.009-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.112 3.227 5.113 4.526.714.309 1.271.494 1.706.632.716.228 1.368.196 1.883.119.574-.085 1.77-.724 2.02-1.424.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z" />
+                        </svg>
+                        GABUNG SEKARANG
+                    </a>
+                </div>
+                <p class="text-xs text-gray-400 italic">
+                    Harga termurah di seluruh wilayah Indonesia
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
